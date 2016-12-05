@@ -5,9 +5,8 @@ public class CubeScale : MonoBehaviour
 {
 	//get this item's Transform
 	private Transform itemTransform;
-	//a variable to store the number of collected items
-	public static int numberOfItems=0;
 
+    // When 1 the object grows. When 0 the object shrinks
     private int growCube = 1;
 
     // Use this for initialization
@@ -20,8 +19,8 @@ public class CubeScale : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		//rotate this game object
-		itemTransform.Rotate(Vector3.up * 1,Space.Self);
+		//optional rotation of game object
+		//itemTransform.Rotate(Vector3.up * 1,Space.Self);
         
         if (growCube == 1)
         {
