@@ -56,6 +56,21 @@ public class spawnPrefabs : MonoBehaviour {
             launchPrefab(7);
         if (Input.GetKeyUp(KeyCode.K))
             launchPrefab(8);
+
+
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            print("Up arrow pressed");
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            print("Down arrow pressed");
+        }
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            print("Return");
+        }
     }
 
     public void launchPrefab(int whichPrefab)
