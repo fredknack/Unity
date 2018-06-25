@@ -11,7 +11,7 @@ public class globalVarTest : MonoBehaviour {
 
 	void Awake () {
 		Instance = this;
-		exampleFunction ();
+		//exampleFunction ();
 	}
 
 	public void exampleFunction(){
