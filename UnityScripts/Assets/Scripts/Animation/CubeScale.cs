@@ -44,6 +44,6 @@ public class CubeScale : MonoBehaviour
                 growCube = 1;
             }
         }
-        Debug.Log(itemTransform.transform.localScale.y);
+        //Debug.Log(itemTransform.transform.localScale.y);
     }
 }
