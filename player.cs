@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Apply this script to a capsule with a rigidbody (no gravity) and rotation constraint checkboxes selected
-//Make a camera a child of the capsule. Make sure it is tagged as the Main Camera
+//Make a camera, tagged as the Main Camera, is setup as the child of the player capsule. 
 
 public class Player : MonoBehaviour
 {
