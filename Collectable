@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Pool;
+
+public class Collectable : MonoBehaviour
+{
+    //Using ScriptabelObject to provide variable settings to collectable item
+    public PickupObject pickup;
+    //The ScoreManager is the script attached to the UI canvas
+    private ScoreManager scoreManager;
+    private void Start() {
+        scoreManager = GameObject.Find("Canvas").GetComponent<ScoreManager>();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player") {
+            scoreManager.score += pickup.itemValue;
+            pickup.Print();
+        }
+    }
+}
