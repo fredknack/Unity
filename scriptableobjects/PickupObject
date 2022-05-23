@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Pickup", menuName = "Pickups/Powerup")]
+
+public class PickupObject : ScriptableObject
+{
+    public string itemName;
+    public int itemValue;
+    public void Print() 
+    {
+        Debug.Log("itemName: " + itemName + " " + "itemValue: " + itemValue);
+    }
+    
+}
