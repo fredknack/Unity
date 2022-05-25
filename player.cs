@@ -16,14 +16,14 @@ public class Player : MonoBehaviour
     public  float MaxLookX; //80
     public float minLookX; //-80
     private float rotX;
-    private Camera _cam;
+    public Camera _cam;
     private Rigidbody _rig;
-    
+
     void Awake()
     {
         _cam = Camera.main;
         _rig = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
     void LateUpdate()
     {
@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
             TryJump();
         }
         CamLook();
+        MouseRay();
     }
+    
+
     void Move() {
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float z = Input.GetAxis("Vertical") * moveSpeed;
@@ -51,6 +54,22 @@ public class Player : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
         if(Physics.Raycast(ray, 1.5f)){
             _rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    void MouseRay()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var ray = _cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo))
+            {
+                IDamageable damageable = hitInfo.collider.GetComponent<IDamageable>();
+                if (damageable != null)
+                {
+                    damageable.Damage();
+                }
+            }
         }
     }
 }
