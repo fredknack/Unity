@@ -28,9 +28,7 @@ public class Player : MonoBehaviour
     void LateUpdate()
     {
         Move();
-        if(Input.GetButtonDown("Jump")){
-            TryJump();
-        }
+        TryJump(); 
         CamLook();
         MouseRay();
     }
@@ -51,9 +49,13 @@ public class Player : MonoBehaviour
         transform.eulerAngles += Vector3.up * y;
     }
     void TryJump() {
-        Ray ray = new Ray(transform.position, Vector3.down);
-        if(Physics.Raycast(ray, 1.5f)){
-            _rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        
+        if(Input.GetButtonDown("Jump")){
+            Ray ray = new Ray(transform.position, Vector3.down);
+            print(ray);
+            if(Physics.Raycast(ray, 2.5f)){
+                _rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
         }
     }
 
