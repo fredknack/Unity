@@ -53,9 +53,9 @@ public class Spawner : MonoBehaviour
 
     private void SpawnBullet(Bullet instance) {
         Vector3 spawnLocation = new Vector3(
-            SpawnArea.transform.position.x + SpawnArea.center.x + Random.Range(-4f * SpawnArea.bounds.extents.x, SpawnArea.bounds.extents.x ),
-            SpawnArea.transform.position.y + SpawnArea.center.y + Random.Range(-4f * SpawnArea.bounds.extents.x, SpawnArea.bounds.extents.y ),
-            SpawnArea.transform.position.z + SpawnArea.center.z + Random.Range(-4f * SpawnArea.bounds.extents.x, SpawnArea.bounds.extents.z )
+            SpawnArea.transform.position.x + SpawnArea.center.x + UnityEngine.Random.Range(-4f * SpawnArea.bounds.extents.x, SpawnArea.bounds.extents.x ),
+            SpawnArea.transform.position.y + SpawnArea.center.y + UnityEngine.Random.Range(-4f * SpawnArea.bounds.extents.x, SpawnArea.bounds.extents.y ),
+            SpawnArea.transform.position.z + SpawnArea.center.z + UnityEngine.Random.Range(-4f * SpawnArea.bounds.extents.x, SpawnArea.bounds.extents.z )
         );
         instance.transform.position = spawnLocation;
 
