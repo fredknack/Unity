@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Projectiles;
+using Projectiles.Bullet;
 using UnityEngine;
 using UnityEngine.Pool;
 
