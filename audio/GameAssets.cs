@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameAssets : MonoBehaviour
 {
+    // Assign this script to an empty gameobject then make it a prefab in the Resources folder
+    
     private static GameAssets _i;
 
     public static GameAssets i {
